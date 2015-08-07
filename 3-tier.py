@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
+#DAL 数据访问层
+#提供数据的添加，删除，修改，更新，查找
 class Data(object):
     """ Data Store Class """
 
@@ -15,7 +16,8 @@ class Data(object):
         print("(Fetching from Data Store)")
         return {'products': self.products}
 
-
+#BLL 业务逻辑层
+#针对具体问题的操作，对数据层的操作，针对数据进行逻辑处理
 class BusinessLogic(object):
     """ Business logic holding data store instances """
 
@@ -27,7 +29,8 @@ class BusinessLogic(object):
     def product_information(self, product):
         return self.data['products'].get(product, None)
 
-
+#UI 表现层
+#展现给用户界面，在用户看到系统的时候所见即所得
 class Ui(object):
     """ UI interaction class """
 
